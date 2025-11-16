@@ -1,16 +1,14 @@
-/* Body */
 body {
-    font-family: 'Montserrat', sans-serif; /* font hiện đại */
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom right, #a0e7e5, #00b4d8); /* xanh dịu, pastel */
+    background: linear-gradient(to bottom right, #a0e7e5, #00b4d8);
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
 }
 
-/* Header */
 header {
     text-align: center;
     padding: 30px 20px;
@@ -18,15 +16,13 @@ header {
 
 header h1 {
     font-size: 2.5rem;
-    color: #023e8a; /* xanh đậm nổi bật */
+    color: #023e8a; 
 }
 
 header p {
     font-size: 1.1rem;
-    color: #03045e; /* xanh đậm hơn */
+    color: #03045e;
 }
-
-/* Danh sách thành viên */
 .members {
     margin-top: 20px;
     display: flex;
@@ -35,7 +31,7 @@ header p {
 }
 
 .member {
-    background: #ffffffcc; /* nền trắng hơi trong suốt */
+    background: #ffffffcc;
     padding: 15px 25px;
     margin: 8px 0;
     border-radius: 15px;
@@ -51,13 +47,12 @@ header p {
     box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
 
-/* Nút link Canva */
 .canva-link {
     margin-top: 30px;
 }
 
 .canva-link a {
-    background: linear-gradient(to right, #48cae4, #90e0ef); /* gradient xanh dịu */
+    background: linear-gradient(to right, #48cae4, #90e0ef); 
     color: white;
     padding: 12px 25px;
     border-radius: 25px;
