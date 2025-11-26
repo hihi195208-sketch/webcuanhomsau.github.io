@@ -1,114 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group Profile</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f7f7f7;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-        }
-        .group-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-        .profile-card {
-            background: white;
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .profile-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-        .name a {
-            font-size: 18px;
-            margin-top: 10px;
-            font-weight: bold;
-            text-decoration: none;
-            color: #0077cc;
-        }
-        .name a:hover {
-            text-decoration: underline;
-        }
-        .class {
-            color: #555;
-        }
-    </style>
+<meta charset="utf-8" />
+<title>Giới thiệu nhóm</title>
+<style>
+  body{font-family:Arial;margin:0;background:#eef2f6}
+  header{width:100%;height:220px;background:url('header.jpg') center/cover no-repeat;border-bottom:4px solid #2563eb}
+  .container{padding:20px}
+  .members{display:flex;gap:20px;overflow-x:auto;padding:10px}
+  .member{background:#fff;padding:10px;border-radius:10px;box-shadow:0 3px 8px rgba(0,0,0,0.15);cursor:pointer;text-align:center;min-width:160px}
+  .member img{width:120px;height:120px;border-radius:10px;object-fit:cover}
+  .detail{text-align:center;margin-top:20px;background:#fff;padding:20px;border-radius:10px;box-shadow:0 3px 8px rgba(0,0,0,0.15)}
+  .detail img{width:200px;height:200px;border-radius:12px;object-fit:cover;margin-bottom:10px}
+  .link-section{margin-top:30px;padding:20px;background:#fff;border-radius:10px;box-shadow:0 3px 8px rgba(0,0,0,0.15)}
+  a.btn{display:inline-block;margin-top:10px;padding:10px 16px;background:#2563eb;color:#fff;border-radius:8px;text-decoration:none}
+</style>
 </head>
 <body>
+<header></header>
+<div class="container">
+  <h2>Thành viên nhóm</h2>
+  <div class="members" id="members"></div>
 
-    <h1>Group Profile</h1>
+  <div class="detail" id="detail">
+    <p>Chọn một thành viên để xem thông tin.</p>
+  </div>
 
-    <div class="group-container">
+  <div class="link-section">
+    <h3>Bài tập của nhóm</h3>
+    <p>Nhấn vào liên kết bên dưới để chuyển đến phần làm bài tập của nhóm.</p>
+    <a class=\"btn\" href=\https://www.canva.com/design/DAGzxApgTpM/PWEykRqoUenqVsGBUFZB7A/edit?utm_content=DAGzxApgTpM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton>Đi đến bài tập</a>
+  </div>
+</div>
 
-        <!-- Person 1 -->
-        <div class="profile-card">
-            <img src="images/coffee.png" alt="Person 1">
-            <div class="Phương Thy">
-                <a href="https://example.com/person1" target="_blank">Person 1</a>
-            </div>
-            <div class="class">Class: Class 12 English</div>
-        </div>
+<script>
+const members=[
+  {name:'Nguyễn Phương Thy',class:'12 Anh',dob:'19/05/2008',img:'https://i.pinimg.com/736x/b3/ed/08/b3ed08507e8ce698257c0c448177742e.jpg'},
+  {name:'Mai Hoàng Vy',class:'12 Anh',dob:'20/05/2008',img:'https://i.pinimg.com/736x/98/43/cc/9843cccb9f058d0d2143033a0b1bebcf.jpg'},
+  {name:'Đặng Khánh Vy',class:'12 Anh',dob:'19/09/2008',img:'https://i.pinimg.com/736x/2f/d2/1b/2fd21bd35fbe51140cb7d534b157ce2d.jpg'},
+  {name:'Lê Bùi Thảo Nhi',class:'12 Anh',dob:'04/10/2008',img:'https://i.pinimg.com/736x/a7/f3/e3/a7f3e3f764240e539120de87a2b6ba0d.jpg'},
+  {name:'Đoàn Chí Cường',class:'12 Anh',dob:'27/08/2008',img:'https://i.pinimg.com/1200x/a7/80/90/a7809097d1a3343c25df745941dd31f5.jpg'},
+  {name:'Đặng Hương Thảo',class:'12 Anh',dob:'12/07/2008',img:'https://i.pinimg.com/736x/dc/8e/0e/dc8e0ea7a7e78877215668113f7c4917.jpg'}
+];
 
-        <!-- Person 2 -->
-        <div class="profile-card">
-            <img src="https://via.placeholder.com/300" alt="Person 2">
-            <div class="name">
-                <a href="https://example.com/person2" target="_blank">Person 2</a>
-            </div>
-            <div class="class">Class: Class B</div>
-        </div>
+const list=document.getElementById('members');
+const detail=document.getElementById('detail');
 
-        <!-- Person 3 -->
-        <div class="profile-card">
-            <img src="https://via.placeholder.com/300" alt="Person 3">
-            <div class="name">
-                <a href="https://example.com/person3" target="_blank">Person 3</a>
-            </div>
-            <div class="class">Class: Class C</div>
-        </div>
+members.forEach((m,i)=>{
+  const div=document.createElement('div');
+  div.className='member';
+  div.innerHTML=`<img src="${m.img}"><p><strong>${m.name}</strong></p>`;
+  div.onclick=()=>showDetail(i);
+  list.appendChild(div);
+});
 
-        <!-- Person 4 -->
-        <div class="profile-card">
-            <img src="https://via.placeholder.com/300" alt="Person 4">
-            <div class="name">
-                <a href="https://example.com/person4" target="_blank">Person 4</a>
-            </div>
-            <div class="class">Class: Class D</div>
-        </div>
-
-        <!-- Person 5 -->
-        <div class="profile-card">
-            <img src="https://via.placeholder.com/300" alt="Person 5">
-            <div class="name">
-                <a href="https://example.com/person5" target="_blank">Person 5</a>
-            </div>
-            <div class="class">Class: Class E</div>
-        </div>
-
-        <!-- Person 6 -->
-        <div class="profile-card">
-            <img src="https://via.placeholder.com/300" alt="Person 6">
-            <div class="name">
-                <a href="https://example.com/person6" target="_blank">Person 6</a>
-            </div>
-            <div class="class">Class: Class F</div>
-        </div>
-
-    </div>
-
+function showDetail(i){
+  const m=members[i];
+  detail.innerHTML=`
+<img src="${m.img}">
+    <h3>${m.name}</h3>
+    <p><strong>Lớp:</strong> ${m.class}</p>
+    <p><strong>Ngày sinh:</strong> ${m.dob}</p>`;
+}
+</script>
 </body>
 </html>
