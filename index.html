@@ -253,14 +253,6 @@ footer{
   <button id="musicBtn" style="margin-top:20px;padding:10px 15px;border:none;border-radius:8px;background:#ff82b2;color:white;font-size:16px;cursor:pointer;">
     🔊 Bật nhạc
   </button>
-   <div style="display:none;">
-      <iframe 
-        width="0" 
-        height="0"
-        src="https://www.youtube.com/embed/EmLfHg1SbnI?autoplay=1&loop=1&playlist=EmLfHg1SbnI"
-        frameborder="0"
-      </iframe>
-    </div>
   <div class="info">
     <p><strong>Ngày sinh:</strong> 19/09/2008</p>
     <p><strong>Sở thích:</strong> Ngủ, coi phim</p>
@@ -268,30 +260,7 @@ footer{
   </div>
   <a class="back" onclick="backHome()">◀ Quay lại</a>
 </div>
-<script>
-  let player;
-  let isPlaying = false;
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-      videoId: 'BE1hi7QhjZg',
-      playerVars: {
-        autoplay: 0,
-        loop: 1,
-        playlist: 'BE1hi7QhjZg'
-      },
-    });
-  }
-  document.getElementById("musicBtn").onclick = function () {
-    if (!isPlaying) {
-      player.playVideo();
-      this.textContent = "🔇 Tắt nhạc";
-    } else {
-      player.pauseVideo();
-      this.textContent = "🔊 Bật nhạc";
-    }
-    isPlaying = !isPlaying;
-  };
-</script>
+
   
 <!-- THẢO NHI -->
 <div class="detail-page" id="nhi">
