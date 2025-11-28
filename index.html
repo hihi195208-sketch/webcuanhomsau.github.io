@@ -257,17 +257,7 @@ footer{
   </div>
   <a class="back" onclick="backHome()">◀ Quay lại</a>
 </div>
-<script>
-  function playMusic() {
-    const player = document.getElementById("musicPlayer");
-    // Play video
-    player.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-    // Unmute sau khi bắt đầu phát
-    setTimeout(() => {
-      player.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
-    }, 500);
-  }
-</script>
+
   
 <!-- THẢO NHI -->
 <div class="detail-page" id="nhi">
@@ -302,6 +292,17 @@ footer{
   </div>
   <a class="back" onclick="backHome()">◀ Quay lại</a>
 </div>
+  <script>
+  function playMusic() {
+    const player = document.getElementById("musicPlayer");
+    // Play video
+    player.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+    // Unmute sau khi bắt đầu phát
+    setTimeout(() => {
+      player.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
+    }, 500);
+  }
+</script>
 
 <!-- HƯƠNG THẢO -->
 <div class="detail-page" id="thaodang">
