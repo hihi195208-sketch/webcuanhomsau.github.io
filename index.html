@@ -133,51 +133,46 @@ footer{text-align:center;margin:40px 0 20px;color:#6b7280;}
 <div id="musicHolder" style="display:none;"></div>
 
 <script>
-// Mappings: id -> YouTube embed URL (autoplay enabled)
+// Danh sách nhạc từng thành viên
 const musicList = {
-  thy:  "https://www.youtube.com/embed/BE1hi7QhjZg?autoplay=1&rel=0",
-  mhvy: "https://www.youtube.com/embed/wjzf_nZtB0s?autoplay=1&rel=0",
-  kvy:  "https://www.youtube.com/embed/3rYkH4xQdY8?autoplay=1&rel=0",
-  nhi:  "https://www.youtube.com/embed/yp1Jx2vGkO8?autoplay=1&rel=0",
-  cuong:"https://www.youtube.com/embed/hvL1339luv0?autoplay=1&rel=0",
-  thaodang:"https://www.youtube.com/embed/LkwCcLkNf8Y?autoplay=1&rel=0"
+  thy:  "https://zingmp3.vn/bai-hat/Tet-Dong-Day-KHOA/ZWA7UB8U.html",
+  mhvy: "https://zingmp3.vn/bai-hat/Tet-Dong-Day-KHOA/ZWA7UB8U.html",
+  kvy:  "https://zingmp3.vn/bai-hat/Tet-Dong-Day-KHOA/ZWA7UB8U.html",
+  nhi:  "https://zingmp3.vn/bai-hat/Tet-Dong-Day-KHOA/ZWA7UB8U.html",
+  cuong:"https://zingmp3.vn/bai-hat/Tet-Dong-Day-KHOA/ZWA7UB8U.html",
+  thaodang:"https://zingmp3.vn/bai-hat/Tet-Dong-Day-KHOA/ZWA7UB8U.html"
 };
 
-let currentIframe = null;
+let currentAudio = null;
 
 function openMember(id){
-  // hide main
-  document.getElementById('mainPage').style.display = 'none';
-  // hide all pages
-  document.querySelectorAll('.detail-page').forEach(p => p.style.display = 'none');
-  // show page
-  const page = document.getElementById(id + 'Page');
-  if(page) page.style.display = 'block';
+  document.getElementById("mainPage").style.display = "none";
 
-  // remove existing iframe
-  if(currentIframe){ currentIframe.remove(); currentIframe = null; }
-
-  // create iframe for this member
-  const url = musicList[id];
-  if(url){
-    const iframe = document.createElement('iframe');
-    iframe.src = url;
-    iframe.width = '0';
-    iframe.height = '0';
-    iframe.style.display = 'none';
-    iframe.setAttribute('allow', 'autoplay');
-    document.getElementById('musicHolder').appendChild(iframe);
-    currentIframe = iframe;
+  // Tắt nhạc cũ
+  if(currentAudio){
+    currentAudio.pause();
+    currentAudio = null;
   }
+
+  document.querySelectorAll(".detail-page").forEach(p => p.style.display = "none");
+  document.getElementById(id + "Page").style.display = "block";
+}
+
+function playMusic(id){
+  if(currentAudio){
+    currentAudio.pause();
+  }
+  currentAudio = new Audio(musicList[id]);
+  currentAudio.play();
 }
 
 function goBack(){
-  // stop music
-  if(currentIframe){ currentIframe.remove(); currentIframe = null; }
-  // hide member pages
-  document.querySelectorAll('.detail-page').forEach(p => p.style.display = 'none');
-  // show main
-  document.getElementById('mainPage').style.display = 'block';
+  if(currentAudio){
+    currentAudio.pause();
+    currentAudio = null;
+  }
+  document.querySelectorAll(".detail-page").forEach(p => p.style.display = "none");
+  document.getElementById("mainPage").style.display = "block";
 }
 </script>
 
