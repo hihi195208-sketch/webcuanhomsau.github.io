@@ -260,6 +260,35 @@ footer{
   </div>
   <a class="back" onclick="backHome()">◀ Quay lại</a>
 </div>
+<div id="player" style="display:none;"></div>
+</div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+  let player;
+  let isPlaying = false;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      videoId: 'gTXEvcprj40',
+      playerVars: {
+        autoplay: 0,
+        loop: 1,
+        playlist: 'gTXEvcprj40'
+      }
+    });
+  }
+  document.getElementById("musicBtn").onclick = function () {
+    if (!isPlaying) {
+      player.playVideo();
+      this.textContent = "🔇 Tắt nhạc";
+    } else {
+      player.pauseVideo();
+      this.textContent = "🔊 Bật nhạc";
+    }
+    isPlaying = !isPlaying;
+  };
+</script>
+
 
   
 <!-- THẢO NHI -->
