@@ -273,13 +273,22 @@ footer{
 
 <!-- CHÍ CƯỜNG -->
 <div class="detail-page" id="cuong">
-  <iframe 
-      width="0" height="0"
-      src="https://www.youtube.com/embed/EmLfHg1SbnI?autoplay=1&loop=1&playlist=EmLfHg1SbnI"
-      frameborder="0" allow="autoplay">
-  </iframe>
   <img class="avatar" src="https://i.pinimg.com/1200x/a7/80/90/a7809097d1a3343c25df745941dd31f5.jpg">
   <h2>Đoàn Chí Cường</h2>
+  <!-- Nút bật nhạc -->
+  <div class="play-btn" onclick="playMusic()">▶ Bật nhạc</div>
+
+  <!-- YouTube hidden player (mute để autoplay hợp lệ) -->
+  <div style="display:none;">
+    <iframe 
+      id="musicPlayer"
+      width="0" 
+      height="0"
+      src=""https://www.youtube.com/embed/uHu0T5WyXWQ?enablejsapi=1&autoplay=0&loop=1&playlist=uHu0T5WyXWQ&mute=1"
+      frameborder="0"
+      allow="autoplay">
+    </iframe>
+  </div>
   <div class="info">
     <p><strong>Ngày sinh:</strong> 27/08/2008</p>
     <p><strong>Sở thích:</strong> Dad jokes, ăn–ngủ–chơi</p>
@@ -287,6 +296,30 @@ footer{
   </div>
   <a class="back" onclick="backHome()">◀ Quay lại</a>
 </div>
+<script>
+  function backHome() {
+    window.history.back();
+  }
+  // Hàm phát nhạc
+  function playMusic() {
+    const player = document.getElementById("musicPlayer");
+
+    // Gửi lệnh phát nhạc cho player
+    player.contentWindow.postMessage(JSON.stringify({
+      event: "command",
+      func: "playVideo",
+      args: []
+    }), "*");
+    // Bỏ mute sau khi video bắt đầu phát
+    setTimeout(() => {
+      player.contentWindow.postMessage(JSON.stringify({
+        event: "command",
+        func: "unMute",
+        args: []
+      }), "*");
+    }, 500);
+  }
+</script>
 
   
 <!-- HƯƠNG THẢO -->
