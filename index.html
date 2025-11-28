@@ -310,28 +310,44 @@ footer{
 
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
-  let player;
-  let isPlaying = false;
+  let players = {}; 
+  let isPlaying = {}; 
   function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player-cuong', {
-      videoId: 'BE1hi7QhjZg',
-      playerVars: {
-        autoplay: 0,
-        loop: 1,
-        playlist: 'BE1hi7QhjZg'
-      },
+    // Duyệt qua tất cả các Mem
+    document.querySelectorAll(".detail-page").forEach(profile => {
+      const id = profile.id; 
+      const videoId = profile.dataset.music; 
+      const playerBox = document.getElementById("player-" + id); 
+
+      // Khởi tạo player YouTube cho mỗi Mem
+      players[id] = new YT.Player(playerBox, {
+        videoId: videoId, 
+        playerVars: {
+          autoplay: 0,
+          loop: 1,      
+          playlist: videoId 
+        },
+        events: {
+          onReady: function() {
+            isPlaying[id] = false; 
+          }
+        }
+      });
+
+      // Sự kiện cho nút bật/tắt nhạc
+      const btn = document.getElementById("musicBtn-" + id);
+      btn.onclick = function() {
+        if (!isPlaying[id]) {
+          players[id].playVideo(); // Phát nhạc khi nút nhấn
+          this.textContent = "🔇 Tắt nhạc"; // Đổi nút thành "Tắt nhạc"
+        } else {
+          players[id].pauseVideo(); // Dừng nhạc khi nút nhấn
+          this.textContent = "🔊 Bật nhạc"; // Đổi nút thành "Bật nhạc"
+        }
+        isPlaying[id] = !isPlaying[id]; // Đổi trạng thái phát nhạc
+      };
     });
   }
-  document.getElementById("musicBtn-cuong").onclick = function () {
-    if (!isPlaying) {
-      player.playVideo();
-      this.textContent = "🔇 Tắt nhạc";
-    } else {
-      player.pauseVideo();
-      this.textContent = "🔊 Bật nhạc";
-    }
-    isPlaying = !isPlaying;
-  };
 </script>
 
 <script>
