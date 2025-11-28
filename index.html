@@ -308,47 +308,31 @@ footer{
   <a class="back" onclick="backHome()">◀ Quay lại</a>
 </div>
 
-<script src="https://www.youtube.com/iframe_api"></script>
-<script>
-  let players = {}; 
-  let isPlaying = {}; 
-  function onYouTubeIframeAPIReady() {
-    // Duyệt qua tất cả các Mem
-    document.querySelectorAll(".detail-page").forEach(profile => {
-      const id = profile.id; 
-      const videoId = profile.dataset.music; 
-      const playerBox = document.getElementById("player-" + id); 
+function onYouTubeIframeAPIReady() {
+  document.querySelectorAll(".detail-page").forEach(profile => {
+    const id = profile.id;                  // id Mem, ví dụ 'cuong', 'kvy'
+    const videoId = profile.dataset.music;  // video YouTube của Mem
+    const playerBox = document.getElementById("player-" + id);
 
-      // Khởi tạo player YouTube cho mỗi Mem
-      players[id] = new YT.Player(playerBox, {
-        videoId: videoId, 
-        playerVars: {
-          autoplay: 0,
-          loop: 1,      
-          playlist: videoId 
-        },
-        events: {
-          onReady: function() {
-            isPlaying[id] = false; 
-          }
-        }
-      });
-
-      // Sự kiện cho nút bật/tắt nhạc
-      const btn = document.getElementById("musicBtn-" + id);
-      btn.onclick = function() {
-        if (!isPlaying[id]) {
-          players[id].playVideo(); // Phát nhạc khi nút nhấn
-          this.textContent = "🔇 Tắt nhạc"; // Đổi nút thành "Tắt nhạc"
-        } else {
-          players[id].pauseVideo(); // Dừng nhạc khi nút nhấn
-          this.textContent = "🔊 Bật nhạc"; // Đổi nút thành "Bật nhạc"
-        }
-        isPlaying[id] = !isPlaying[id]; // Đổi trạng thái phát nhạc
-      };
+    players[id] = new YT.Player(playerBox, {
+      videoId: videoId,
+      playerVars: { autoplay: 0, loop: 1, playlist: videoId },
+      events: { onReady: function() { isPlaying[id] = false; } }
     });
-  }
-</script>
+
+    const btn = document.getElementById("musicBtn-" + id);
+    btn.onclick = function() {
+      if (!isPlaying[id]) {
+        players[id].playVideo();
+        this.textContent = "🔇 Tắt nhạc";
+      } else {
+        players[id].pauseVideo();
+        this.textContent = "🔊 Bật nhạc";
+      }
+      isPlaying[id] = !isPlaying[id];
+    };
+  });
+}
 
 <script>
 function openMember(id){
