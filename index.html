@@ -257,7 +257,18 @@ footer{
   </div>
   <a class="back" onclick="backHome()">◀ Quay lại</a>
 </div>
-
+<script>
+  function playMusic() {
+    const player = document.getElementById("musicPlayer");
+    // Play video
+    player.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+    // Unmute sau khi bắt đầu phát
+    setTimeout(() => {
+      player.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
+    }, 500);
+  }
+</script>
+  
 <!-- THẢO NHI -->
 <div class="detail-page" id="nhi">
   <img class="avatar" src="https://i.pinimg.com/736x/a7/f3/e3/a7f3e3f764240e539120de87a2b6ba0d.jpg">
