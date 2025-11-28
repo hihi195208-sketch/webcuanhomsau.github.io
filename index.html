@@ -259,7 +259,6 @@ footer{
         height="0"
         src="https://www.youtube.com/embed/EmLfHg1SbnI?autoplay=1&loop=1&playlist=EmLfHg1SbnI"
         frameborder="0"
-        allow="autoplay">
       </iframe>
     </div>
   <div class="info">
@@ -269,7 +268,30 @@ footer{
   </div>
   <a class="back" onclick="backHome()">◀ Quay lại</a>
 </div>
-
+<script>
+  let player;
+  let isPlaying = false;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      videoId: 'BE1hi7QhjZg',
+      playerVars: {
+        autoplay: 0,
+        loop: 1,
+        playlist: 'BE1hi7QhjZg'
+      },
+    });
+  }
+  document.getElementById("musicBtn").onclick = function () {
+    if (!isPlaying) {
+      player.playVideo();
+      this.textContent = "🔇 Tắt nhạc";
+    } else {
+      player.pauseVideo();
+      this.textContent = "🔊 Bật nhạc";
+    }
+    isPlaying = !isPlaying;
+  };
+</script>
   
 <!-- THẢO NHI -->
 <div class="detail-page" id="nhi">
