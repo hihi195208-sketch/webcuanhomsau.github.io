@@ -226,13 +226,10 @@ footer{
 <div class="detail-page" id="thy">
   <img class="avatar" src="https://i.pinimg.com/736x/b3/ed/08/b3ed08507e8ce698257c0c448177742e.jpg">
   <h2>Nguyễn Phương Thy</h2>
-    <button id="https://zingmp3.vn/bai-hat/Tet-Dong-Day-KHOA/ZWA7UB8U.html">
-    🔊 Bật nhạc
-  </button>
   <div class="info">
     <p><strong>Ngày sinh:</strong> 19/05/2008</p>
     <p><strong>Sở thích:</strong> Nghe nhạc, đọc sách, chụp ảnh</p>
-    <p><strong>Châm ngôn sống:</strong> “Sống nay chết maimai.”</p>
+    <p><strong>Châm ngôn sống:</strong> “Hãy sống như thể ngày mai bạn không còn tồn tại.”</p>
   </div>
   <a class="back" onclick="backHome()">◀ Quay lại</a>
 </div>
@@ -250,12 +247,9 @@ footer{
 </div>
 
 <!-- KHÁNH VY -->
-<div class="detail-page" id="kvy" data-music="gTXEvcprj40">
+<div class="detail-page" id="kvy">
   <img class="avatar" src="https://i.pinimg.com/736x/2f/d2/1b/2fd21bd35fbe51140cb7d534b157ce2d.jpg">
   <h2>Đặng Khánh Vy</h2>
-  <button id="musicBtn-kvy" style="margin-top:20px;padding:10px 15px;border:none;border-radius:8px;background:#ff82b2;color:white;font-size:16px;cursor:pointer;">
-    🔊 Bật nhạc
-  </button>
   <div class="info">
     <p><strong>Ngày sinh:</strong> 19/09/2008</p>
     <p><strong>Sở thích:</strong> Ngủ, coi phim</p>
@@ -263,9 +257,6 @@ footer{
   </div>
   <a class="back" onclick="backHome()">◀ Quay lại</a>
 </div>
-<div id="player-kvy" style="display:none;"></div>
-</div>
-
 
   
 <!-- THẢO NHI -->
@@ -281,10 +272,10 @@ footer{
 </div>
 
 <!-- CHÍ CƯỜNG -->
-<div class="detail-page" id="cuong" data-music="BE1hi7QhjZg">
+<div class="detail-page" id="cuong">
   <img class="avatar" src="https://i.pinimg.com/1200x/a7/80/90/a7809097d1a3343c25df745941dd31f5.jpg">
   <h2>Đoàn Chí Cường</h2>
-  <button id="musicBtn-cuong" style="margin-top:20px;padding:10px 15px;border:none;border-radius:8px;background:#ff82b2;color:white;font-size:16px;cursor:pointer;">
+  <button id="musicBtn" style="margin-top:20px;padding:10px 15px;border:none;border-radius:8px;background:#ff82b2;color:white;font-size:16px;cursor:pointer;">
     🔊 Bật nhạc
   </button>
   <div class="info">
@@ -294,8 +285,33 @@ footer{
   </div>
   <a class="back" onclick="backHome()">◀ Quay lại</a>
 </div>
-  <div id="player-cuong" style="display:none;"></div>
+  <div id="player" style="display:none;"></div>
 </div>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+  let player;
+  let isPlaying = false;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      videoId: 'BE1hi7QhjZg',
+      playerVars: {
+        autoplay: 0,
+        loop: 1,
+        playlist: 'BE1hi7QhjZg'
+      },
+    });
+  }
+  document.getElementById("musicBtn").onclick = function () {
+    if (!isPlaying) {
+      player.playVideo();
+      this.textContent = "🔇 Tắt nhạc";
+    } else {
+      player.pauseVideo();
+      this.textContent = "🔊 Bật nhạc";
+    }
+    isPlaying = !isPlaying;
+  };
+</script>
 
 
   
@@ -310,32 +326,6 @@ footer{
   </div>
   <a class="back" onclick="backHome()">◀ Quay lại</a>
 </div>
-
-function onYouTubeIframeAPIReady() {
-  document.querySelectorAll(".detail-page").forEach(profile => {
-    const id = profile.id;                  // id Mem, ví dụ 'cuong', 'kvy'
-    const videoId = profile.dataset.music;  // video YouTube của Mem
-    const playerBox = document.getElementById("player-" + id);
-
-    players[id] = new YT.Player(playerBox, {
-      videoId: videoId,
-      playerVars: { autoplay: 0, loop: 1, playlist: videoId },
-      events: { onReady: function() { isPlaying[id] = false; } }
-    });
-
-    const btn = document.getElementById("musicBtn-" + id);
-    btn.onclick = function() {
-      if (!isPlaying[id]) {
-        players[id].playVideo();
-        this.textContent = "🔇 Tắt nhạc";
-      } else {
-        players[id].pauseVideo();
-        this.textContent = "🔊 Bật nhạc";
-      }
-      isPlaying[id] = !isPlaying[id];
-    };
-  });
-}
 
 <script>
 function openMember(id){
