@@ -3,210 +3,71 @@
 <head>
 <meta charset="utf-8" />
 <title>Giới thiệu nhóm 6 – Pastel Edition</title>
-
 <style>
-/* ===================== */
-/* 🎨 MÀU PASTEL TOÀN TRANG */
-/* ===================== */
 body{
   font-family:Arial, sans-serif;
   margin:0;
-  background:#f7f1ff; /* pastel tím nhạt */
+  background:#f7f1ff;
 }
-
 header{
-  width:100%;
-  height:240px;
+  width:100%;height:240px;
   background:url('https://i.pinimg.com/736x/42/a7/d1/42a7d119b6326f017cfd3e931b9436e2.jpg') center/cover no-repeat;
-  border-bottom:6px solid #a78bfa; /* pastel tím */
+  border-bottom:6px solid #a78bfa;
 }
-
-.container{
-  padding:20px;
-}
-
-/* ===================== */
-/* 👥 DANH SÁCH THÀNH VIÊN */
-/* ===================== */
-.members{
-  display:flex;
-  gap:20px;
-  overflow-x:auto;
-  padding:10px;
-}
-
+.container{padding:20px;}
+.members{display:flex;gap:20px;overflow-x:auto;padding:10px;}
 .member{
-  background:#ffffffdd;
-  padding:12px;
-  border-radius:12px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.12);
-  cursor:pointer;
-  text-align:center;
-  min-width:160px;
-  text-decoration:none;
-  color:black;
-  transition:0.2s;
+  background:#ffffffdd;padding:12px;border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.12);cursor:pointer;text-align:center;
+  min-width:160px;text-decoration:none;color:black;transition:0.2s;
 }
-.member:hover{
-  transform:scale(1.05);
-  background:#fdf7ff;
-}
-.member img{
-  width:120px;
-  height:120px;
-  border-radius:12px;
-  object-fit:cover;
-}
-
-/* ===================== */
-/* 👤 TRANG RIÊNG MEMBERS */
-/* ===================== */
+.member:hover{transform:scale(1.05);background:#fdf7ff;}
+.member img{width:120px;height:120px;border-radius:12px;object-fit:cover;}
 .detail-page{
-  display:none;
-  max-width:700px;
-  margin:30px auto;
-  background:#ffffffd0;
-  padding:25px;
-  border-radius:14px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.12);
+  display:none;max-width:700px;margin:30px auto;background:#ffffffd0;
+  padding:25px;border-radius:14px;box-shadow:0 4px 15px rgba(0,0,0,0.12);
   text-align:center;
 }
-
-.avatar{
-  width:200px;
-  height:200px;
-  border-radius:12px;
-  object-fit:cover;
-  box-shadow:0 4px 12px rgba(0,0,0,0.2);
-  margin-top:-120px;
-  background:white;
-  padding:5px;
+.avatar{width:200px;height:200px;border-radius:12px;object-fit:cover;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);margin-top:-120px;background:white;padding:5px;
 }
-
-.detail-page h2{
-  margin-top:20px;
-  color:#8b5cf6;
-}
-
-.info{
-  text-align:left;
-  margin-top:20px;
-  font-size:17px;
-  line-height:1.6;
-}
-
+.detail-page h2{margin-top:20px;color:#8b5cf6;}
+.info{text-align:left;margin-top:20px;font-size:17px;line-height:1.6;}
 a.back{
-  display:inline-block;
-  margin-top:20px;
-  background:#a78bfa;
-  color:white;
-  text-decoration:none;
-  padding:10px 16px;
-  border-radius:8px;
+  display:inline-block;margin-top:20px;background:#a78bfa;color:white;
+  text-decoration:none;padding:10px 16px;border-radius:8px;
 }
-
-/* ===================== */
-/* 📚 BÀI TẬP */
-/* ===================== */
-.exercise-section{
-  margin-top:30px;
-  padding:20px;
-  background:#ffffffdd;
-  border-radius:12px;
+.exercise-section{margin-top:30px;padding:20px;background:#ffffffdd;border-radius:12px;
   box-shadow:0 4px 12px rgba(0,0,0,0.15);
 }
-
-.exercise-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(130px, 1fr));
-  gap:15px;
-  margin-top:10px;
+.exercise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:15px;margin-top:10px;}
+.card{background:#e9d5ff;padding:15px;border-radius:10px;text-align:center;
+  box-shadow:0 3px 8px rgba(0,0,0,0.1);transition:0.2s;
 }
-
-.card{
-  background:#e9d5ff;
-  padding:15px;
-  border-radius:10px;
-  text-align:center;
-  box-shadow:0 3px 8px rgba(0,0,0,0.1);
-  transition:0.2s;
-}
-.card:hover{
-  background:#f3e8ff;
-  transform:scale(1.04);
-}
-.card a{
-  text-decoration:none;
-  color:#4c1d95;
-  font-weight:bold;
-  font-size:16px;
-}
-
-footer{
-  text-align:center;
-  margin:40px 0 20px;
-  color:#6b7280;
-}
+.card:hover{background:#f3e8ff;transform:scale(1.04);} .card a{text-decoration:none;color:#4c1d95;font-weight:bold;font-size:16px;}
+footer{text-align:center;margin:40px 0 20px;color:#6b7280;}
 </style>
 </head>
-
 <body>
-
 <header></header>
-
-<!-- ===================== -->
-<!-- TRANG CHÍNH -->
-<!-- ===================== -->
 <div class="container" id="mainPage">
-
   <h2 style="color:#7c3aed;">✨ Thành viên nhóm 6 ✨</h2>
-
   <div class="members">
-
-    <div class="member" onclick="openMember('thy')">
-      <img src="https://i.pinimg.com/736x/b3/ed/08/b3ed08507e8ce698257c0c448177742e.jpg">
-      <p><strong>Nguyễn Phương Thy</strong></p>
-    </div>
-
-    <div class="member" onclick="openMember('mhvy')">
-      <img src="https://i.pinimg.com/736x/98/43/cc/9843cccb9f058d0d2143033a0b1bebcf.jpg">
-      <p><strong>Mai Hoàng Vy</strong></p>
-    </div>
-
-    <div class="member" onclick="openMember('kvy')">
-      <img src="https://i.pinimg.com/736x/2f/d2/1b/2fd21bd35fbe51140cb7d534b157ce2d.jpg">
-      <p><strong>Đặng Khánh Vy</strong></p>
-    </div>
-
-    <div class="member" onclick="openMember('nhi')">
-      <img src="https://i.pinimg.com/736x/a7/f3/e3/a7f3e3f764240e539120de87a2b6ba0d.jpg">
-      <p><strong>Lê Bùi Thảo Nhi</strong></p>
-    </div>
-
-    <div class="member" onclick="openMember('cuong')">
-      <img src="https://i.pinimg.com/1200x/a7/80/90/a7809097d1a3343c25df745941dd31f5.jpg">
-      <p><strong>Đoàn Chí Cường</strong></p>
-    </div>
-
-    <div class="member" onclick="openMember('thaodang')">
-      <img src="https://i.pinimg.com/736x/dc/8e/0e/dc8e0ea7a7e78877215668113f7c4917.jpg">
-      <p><strong>Đặng Hương Thảo</strong></p>
-    </div>
-
+    <div class="member" onclick="openMember('thy')"><img src="https://i.pinimg.com/736x/b3/ed/08/b3ed08507e8ce698257c0c448177742e.jpg"><p><strong>Nguyễn Phương Thy</strong></p></div>
+    <div class="member" onclick="openMember('mhvy')"><img src="https://i.pinimg.com/736x/98/43/cc/9843cccb9f058d0d2143033a0b1bebcf.jpg"><p><strong>Mai Hoàng Vy</strong></p></div>
+    <div class="member" onclick="openMember('kvy')"><img src="https://i.pinimg.com/736x/2f/d2/1b/2fd21bd35fbe51140cb7d534b157ce2d.jpg"><p><strong>Đặng Khánh Vy</strong></p></div>
+    <div class="member" onclick="openMember('nhi')"><img src="https://i.pinimg.com/736x/a7/f3/e3/a7f3e3f764240e539120de87a2b6ba0d.jpg"><p><strong>Lê Bùi Thảo Nhi</strong></p></div>
+    <div class="member" onclick="openMember('cuong')"><img src="https://i.pinimg.com/1200x/a7/80/90/a7809097d1a3343c25df745941dd31f5.jpg"><p><strong>Đoàn Chí Cường</strong></p></div>
+    <div class="member" onclick="openMember('thaodang')"><img src="https://i.pinimg.com/736x/dc/8e/0e/dc8e0ea7a7e78877215668113f7c4917.jpg"><p><strong>Đặng Hương Thảo</strong></p></div>
   </div>
 
-  <!-- ===================== -->
-  <!-- BÀI TẬP -->
-  <!-- ===================== -->
   <div class="exercise-section">
     <h3 style="color:#7c3aed;">📚 Bài tập từ Bài 8 đến Bài 18</h3>
-
     <div class="exercise-grid">
-      <!-- TỪ BÀI 8 → 18 -->
-      <!-- Chỉ cần thay link ở href="" -->
-      <div class="card"><a href="" target="_blank">Bài 8</a></div>
-      <div class="card"><a href="" target="_blank">Bài 9</a></div>
-      <div class="card"><a href="" target="_blank">Bài 10</a></div>
+      <div class="card"><a href="https://www.canva.com/design/DAG58dFzeAw/HgfT3E1GgkwC6yeUja_XLQ/edit?ui=e30&continue_in_browser=true" target="_blank">Bài 2</a></div>
+      <div class="card"><a href="https://www.canva.com/design/DAG58ds4CGM/cRnxIiAsTaGbQg18ICp8Ng/edit?utm_content=DAG58ds4CGM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Bài 6</a></div>
+      <div class="card"><a href="https://www.canva.com/design/DAG58eHJSp8/UaSUV6LKpr-JB34hZh_s-g/edit?utm_content=DAG58eHJSp8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Bài 9</a></div>
+      <div class="card"><a href="https://www.canva.com/design/DAG58ZuzDmg/CchF7ehGxhJ6cOpIKa1NSA/edit?continue_in_browser=true&ui=e30" target="_blank">Bài 10</a></div>
       <div class="card"><a href="" target="_blank">Bài 11</a></div>
       <div class="card"><a href="" target="_blank">Bài 12</a></div>
       <div class="card"><a href="" target="_blank">Bài 13</a></div>
@@ -219,128 +80,107 @@ footer{
   </div>
 </div>
 
-<!-- ===================== -->
-<!-- TRANG RIÊNG TỪNG NGƯỜI -->
-<!-- ===================== -->
-<!-- THY -->
-<div class="detail-page" id="thy">
+<!-- PAGES FOR MEMBERS -->
+<div class="detail-page" id="thyPage">
   <img class="avatar" src="https://i.pinimg.com/736x/b3/ed/08/b3ed08507e8ce698257c0c448177742e.jpg">
   <h2>Nguyễn Phương Thy</h2>
-  <div class="info">
-    <p><strong>Ngày sinh:</strong> 19/05/2008</p>
-    <p><strong>Sở thích:</strong> Nghe nhạc, đọc sách, chụp ảnh</p>
-    <p><strong>Châm ngôn sống:</strong> “Hãy sống như thể ngày mai bạn không còn tồn tại.”</p>
-  </div>
-  <a class="back" onclick="backHome()">◀ Quay lại</a>
+  <button onclick="openMember('thy')" style="margin-top:15px;background:#a78bfa;color:white;padding:10px 15px;border:none;border-radius:10px;">🔊 Bật nhạc</button>
+  <div class="info"><p><strong>Ngày sinh:</strong> 19/05/2008</p><p><strong>Sở thích:</strong> Nghe nhạc, đọc sách, chụp ảnh</p></div>
+  <a class="back" onclick="goBack()">⬅ Quay lại</a>
 </div>
 
-<!-- MAI HOÀNG VY -->
-<div class="detail-page" id="mhvy">
+<div class="detail-page" id="mhvyPage">
   <img class="avatar" src="https://i.pinimg.com/736x/98/43/cc/9843cccb9f058d0d2143033a0b1bebcf.jpg">
   <h2>Mai Hoàng Vy</h2>
-  <div class="info">
-    <p><strong>Ngày sinh:</strong> 20/05/2008</p>
-    <p><strong>Sở thích:</strong> Du lịch, chơi với Phương Thy</p>
-    <p><strong>Châm ngôn sống:</strong> “Sống nay, stress mai.”</p>
-  </div>
-  <a class="back" onclick="backHome()">◀ Quay lại</a>
+  <button onclick="openMember('mhvy')" style="margin-top:15px;background:#a78bfa;color:white;padding:10px 15px;border:none;border-radius:10px;">🔊 Bật nhạc</button>
+  <div class="info"><p><strong>Ngày sinh:</strong> 20/05/2008</p><p><strong>Sở thích:</strong> Du lịch, chơi với Phương Thy</p></div>
+  <a class="back" onclick="goBack()">⬅ Quay lại</a>
 </div>
 
-<!-- KHÁNH VY -->
-<div class="detail-page" id="kvy">
+<div class="detail-page" id="kvyPage">
   <img class="avatar" src="https://i.pinimg.com/736x/2f/d2/1b/2fd21bd35fbe51140cb7d534b157ce2d.jpg">
   <h2>Đặng Khánh Vy</h2>
-  <div class="info">
-    <p><strong>Ngày sinh:</strong> 19/09/2008</p>
-    <p><strong>Sở thích:</strong> Ngủ, coi phim</p>
-    <p><strong>Châm ngôn sống:</strong> “Còn thở là còn gỡ.”</p>
-  </div>
-  <a class="back" onclick="backHome()">◀ Quay lại</a>
+  <button onclick="openMember('kvy')" style="margin-top:15px;background:#a78bfa;color:white;padding:10px 15px;border:none;border-radius:10px;">🔊 Bật nhạc</button>
+  <div class="info"><p><strong>Ngày sinh:</strong> 19/09/2008</p><p><strong>Sở thích:</strong> Ngủ, coi phim</p></div>
+  <a class="back" onclick="goBack()">⬅ Quay lại</a>
 </div>
 
-  
-<!-- THẢO NHI -->
-<div class="detail-page" id="nhi">
+<div class="detail-page" id="nhiPage">
   <img class="avatar" src="https://i.pinimg.com/736x/a7/f3/e3/a7f3e3f764240e539120de87a2b6ba0d.jpg">
   <h2>Lê Bùi Thảo Nhi</h2>
-  <div class="info">
-    <p><strong>Ngày sinh:</strong> 04/10/2008</p>
-    <p><strong>Sở thích:</strong> Du lịch, đọc sách</p>
-    <p><strong>Châm ngôn sống:</strong> “Đừng lo ngày mai, hôm nay lo chưa xong.”</p>
-  </div>
-  <a class="back" onclick="backHome()">◀ Quay lại</a>
+  <button onclick="openMember('nhi')" style="margin-top:15px;background:#a78bfa;color:white;padding:10px 15px;border:none;border-radius:10px;">🔊 Bật nhạc</button>
+  <div class="info"><p><strong>Ngày sinh:</strong> 04/10/2008</p><p><strong>Sở thích:</strong> Du lịch, đọc sách</p></div>
+  <a class="back" onclick="goBack()">⬅ Quay lại</a>
 </div>
 
-<!-- CHÍ CƯỜNG -->
-<div class="detail-page" id="cuong">
+<div class="detail-page" id="cuongPage">
   <img class="avatar" src="https://i.pinimg.com/1200x/a7/80/90/a7809097d1a3343c25df745941dd31f5.jpg">
   <h2>Đoàn Chí Cường</h2>
-  <button id="musicBtn" style="margin-top:20px;padding:10px 15px;border:none;border-radius:8px;background:#ff82b2;color:white;font-size:16px;cursor:pointer;">
-    🔊 Bật nhạc
-  </button>
-  <div class="info">
-    <p><strong>Ngày sinh:</strong> 27/08/2008</p>
-    <p><strong>Sở thích:</strong> Dad jokes, ăn–ngủ–chơi</p>
-    <p><strong>Châm ngôn sống:</strong> “What is better than a translator? Trans-now.”</p>
-  </div>
-  <a class="back" onclick="backHome()">◀ Quay lại</a>
+  <button onclick="openMember('cuong')" style="margin-top:15px;background:#a78bfa;color:white;padding:10px 15px;border:none;border-radius:10px;">🔊 Bật nhạc</button>
+  <div class="info"><p><strong>Ngày sinh:</strong> 27/08/2008</p><p><strong>Sở thích:</strong> Dad jokes, ăn–ngủ–chơi</p></div>
+  <a class="back" onclick="goBack()">⬅ Quay lại</a>
 </div>
-  <div id="player" style="display:none;"></div>
-</div>
-<script src="https://www.youtube.com/iframe_api"></script>
-<script>
-  let player;
-  let isPlaying = false;
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-      videoId: 'BE1hi7QhjZg',
-      playerVars: {
-        autoplay: 0,
-        loop: 1,
-        playlist: 'BE1hi7QhjZg'
-      },
-    });
-  }
-  document.getElementById("musicBtn").onclick = function () {
-    if (!isPlaying) {
-      player.playVideo();
-      this.textContent = "🔇 Tắt nhạc";
-    } else {
-      player.pauseVideo();
-      this.textContent = "🔊 Bật nhạc";
-    }
-    isPlaying = !isPlaying;
-  };
-</script>
 
-
-  
-<!-- HƯƠNG THẢO -->
-<div class="detail-page" id="thaodang">
+<div class="detail-page" id="thaodangPage">
   <img class="avatar" src="https://i.pinimg.com/736x/dc/8e/0e/dc8e0ea7a7e78877215668113f7c4917.jpg">
   <h2>Đặng Hương Thảo</h2>
-  <div class="info">
-    <p><strong>Ngày sinh:</strong> 12/07/2008</p>
-    <p><strong>Sở thích:</strong> móc len, đọc sách</p>
-    <p><strong>Châm ngôn sống:</strong> “Chuyện cũ mình bỏ qua.”</p>
-  </div>
-  <a class="back" onclick="backHome()">◀ Quay lại</a>
+  <button onclick="openMember('thaodang')" style="margin-top:15px;background:#a78bfa;color:white;padding:10px 15px;border:none;border-radius:10px;">🔊 Bật nhạc</button>
+  <div class="info"><p><strong>Ngày sinh:</strong> 12/07/2008</p><p><strong>Sở thích:</strong> móc len, đọc sách</p></div>
+  <a class="back" onclick="goBack()">⬅ Quay lại</a>
 </div>
 
+<!-- PLAYER FRAME (ẩn) -->
+<div id="musicHolder" style="display:none;"></div>
+
 <script>
+// Mappings: id -> YouTube embed URL (autoplay enabled)
+const musicList = {
+  thy:  "https://www.youtube.com/embed/BE1hi7QhjZg?autoplay=1&rel=0",
+  mhvy: "https://www.youtube.com/embed/wjzf_nZtB0s?autoplay=1&rel=0",
+  kvy:  "https://www.youtube.com/embed/3rYkH4xQdY8?autoplay=1&rel=0",
+  nhi:  "https://www.youtube.com/embed/yp1Jx2vGkO8?autoplay=1&rel=0",
+  cuong:"https://www.youtube.com/embed/hvL1339luv0?autoplay=1&rel=0",
+  thaodang:"https://www.youtube.com/embed/LkwCcLkNf8Y?autoplay=1&rel=0"
+};
+
+let currentIframe = null;
+
 function openMember(id){
-  document.getElementById("mainPage").style.display="none";
-  document.querySelectorAll(".detail-page").forEach(p=>p.style.display="none");
-  document.getElementById(id).style.display="block";
+  // hide main
+  document.getElementById('mainPage').style.display = 'none';
+  // hide all pages
+  document.querySelectorAll('.detail-page').forEach(p => p.style.display = 'none');
+  // show page
+  const page = document.getElementById(id + 'Page');
+  if(page) page.style.display = 'block';
+
+  // remove existing iframe
+  if(currentIframe){ currentIframe.remove(); currentIframe = null; }
+
+  // create iframe for this member
+  const url = musicList[id];
+  if(url){
+    const iframe = document.createElement('iframe');
+    iframe.src = url;
+    iframe.width = '0';
+    iframe.height = '0';
+    iframe.style.display = 'none';
+    iframe.setAttribute('allow', 'autoplay');
+    document.getElementById('musicHolder').appendChild(iframe);
+    currentIframe = iframe;
+  }
 }
 
-function backHome(){
-  document.querySelectorAll(".detail-page").forEach(p=>p.style.display="none");
-  document.getElementById("mainPage").style.display="block";
+function goBack(){
+  // stop music
+  if(currentIframe){ currentIframe.remove(); currentIframe = null; }
+  // hide member pages
+  document.querySelectorAll('.detail-page').forEach(p => p.style.display = 'none');
+  // show main
+  document.getElementById('mainPage').style.display = 'block';
 }
 </script>
 
 <footer>© Nhóm 6 – 2025</footer>
-
 </body>
 </html>
