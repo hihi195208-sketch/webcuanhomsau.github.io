@@ -277,14 +277,15 @@ footer{
   <h2>Đoàn Chí Cường</h2>
   <div class="play-btn" onclick="playMusic()">▶ Bật nhạc</div>
   <div style="display:none;">
-      <iframe 
-        id="musicPlayer"
-        width="0" 
-        height="0"
-        src="https://www.youtube.com/embed/EmLfHg1SbnI?enablejsapi=1&autoplay=0&loop=1&playlist=EmLfHg1SbnI&mute=1"
-        frameborder="0">
-      </iframe>
-    </div>
+  <iframe 
+    id="musicPlayer"
+    width="0" 
+    height="0"
+    src="https://www.youtube.com/embed/EmLfHg1SbnI?enablejsapi=1&autoplay=0&loop=1&playlist=EmLfHg1SbnI&mute=1&origin=https://yourwebsite.com"
+    frameborder="0"
+    allow="autoplay">
+  </iframe>
+</div>
   <div class="info">
     <p><strong>Ngày sinh:</strong> 27/08/2008</p>
     <p><strong>Sở thích:</strong> Dad jokes, ăn–ngủ–chơi</p>
@@ -295,15 +296,25 @@ footer{
   <script>
   function playMusic() {
     const player = document.getElementById("musicPlayer");
+
     // Play video
-    player.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-    // Unmute sau khi bắt đầu phát
+    player.contentWindow.postMessage(JSON.stringify({
+      event: "command",
+      func: "playVideo",
+      args: []
+    }), "*");
+
+    // Unmute sau khi play
     setTimeout(() => {
-      player.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
+      player.contentWindow.postMessage(JSON.stringify({
+        event: "command",
+        func: "unMute",
+        args: []
+      }), "*");
     }, 500);
   }
 </script>
-
+  
 <!-- HƯƠNG THẢO -->
 <div class="detail-page" id="thaodang">
   <img class="avatar" src="https://i.pinimg.com/736x/dc/8e/0e/dc8e0ea7a7e78877215668113f7c4917.jpg">
