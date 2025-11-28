@@ -275,10 +275,7 @@ footer{
 <div class="detail-page" id="cuong">
   <img class="avatar" src="https://i.pinimg.com/1200x/a7/80/90/a7809097d1a3343c25df745941dd31f5.jpg">
   <h2>Đoàn Chí Cường</h2>
-  <!-- Nút bật nhạc -->
   <div class="play-btn" onclick="playMusic()">▶ Bật nhạc</div>
-
-  <!-- YouTube hidden player (mute để autoplay hợp lệ) -->
   <div style="display:none;">
     <iframe 
       id="musicPlayer"
@@ -300,17 +297,12 @@ footer{
   function backHome() {
     window.history.back();
   }
-  // Hàm phát nhạc
   function playMusic() {
     const player = document.getElementById("musicPlayer");
-
-    // Gửi lệnh phát nhạc cho player
     player.contentWindow.postMessage(JSON.stringify({
       event: "command",
       func: "playVideo",
       args: []
-    }), "*");
-    // Bỏ mute sau khi video bắt đầu phát
     setTimeout(() => {
       player.contentWindow.postMessage(JSON.stringify({
         event: "command",
