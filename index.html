@@ -247,7 +247,7 @@ footer{
 </div>
 
 <!-- KHÁNH VY -->
-<div class="detail-page" id="kvy">
+<div class="detail-page" id="kvy" data-music="gTXEvcprj40">
   <img class="avatar" src="https://i.pinimg.com/736x/2f/d2/1b/2fd21bd35fbe51140cb7d534b157ce2d.jpg">
   <h2>Đặng Khánh Vy</h2>
   <button id="musicBtn-kvy" style="margin-top:20px;padding:10px 15px;border:none;border-radius:8px;background:#ff82b2;color:white;font-size:16px;cursor:pointer;">
@@ -262,32 +262,6 @@ footer{
 </div>
 <div id="player-kvy" style="display:none;"></div>
 </div>
-
-<script src="https://www.youtube.com/iframe_api"></script>
-<script>
-  let player;
-  let isPlaying = false;
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player-kvy', {
-      videoId: 'gTXEvcprj40',
-      playerVars: {
-        autoplay: 0,
-        loop: 1,
-        playlist: 'gTXEvcprj40'
-      }
-    });
-  }
-  document.getElementById("musicBtn-kvy").onclick = function () {
-    if (!isPlaying) {
-      player.playVideo();
-      this.textContent = "🔇 Tắt nhạc";
-    } else {
-      player.pauseVideo();
-      this.textContent = "🔊 Bật nhạc";
-    }
-    isPlaying = !isPlaying;
-  };
-</script>
 
 
   
@@ -304,7 +278,7 @@ footer{
 </div>
 
 <!-- CHÍ CƯỜNG -->
-<div class="detail-page" id="cuong">
+<div class="detail-page" id="cuong" data-music="BE1hi7QhjZg">
   <img class="avatar" src="https://i.pinimg.com/1200x/a7/80/90/a7809097d1a3343c25df745941dd31f5.jpg">
   <h2>Đoàn Chí Cường</h2>
   <button id="musicBtn-cuong" style="margin-top:20px;padding:10px 15px;border:none;border-radius:8px;background:#ff82b2;color:white;font-size:16px;cursor:pointer;">
@@ -319,6 +293,21 @@ footer{
 </div>
   <div id="player-cuong" style="display:none;"></div>
 </div>
+
+
+  
+<!-- HƯƠNG THẢO -->
+<div class="detail-page" id="thaodang">
+  <img class="avatar" src="https://i.pinimg.com/736x/dc/8e/0e/dc8e0ea7a7e78877215668113f7c4917.jpg">
+  <h2>Đặng Hương Thảo</h2>
+  <div class="info">
+    <p><strong>Ngày sinh:</strong> 12/07/2008</p>
+    <p><strong>Sở thích:</strong> móc len, đọc sách</p>
+    <p><strong>Châm ngôn sống:</strong> “Chuyện cũ mình bỏ qua.”</p>
+  </div>
+  <a class="back" onclick="backHome()">◀ Quay lại</a>
+</div>
+
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
   let player;
@@ -344,20 +333,6 @@ footer{
     isPlaying = !isPlaying;
   };
 </script>
-
-
-  
-<!-- HƯƠNG THẢO -->
-<div class="detail-page" id="thaodang">
-  <img class="avatar" src="https://i.pinimg.com/736x/dc/8e/0e/dc8e0ea7a7e78877215668113f7c4917.jpg">
-  <h2>Đặng Hương Thảo</h2>
-  <div class="info">
-    <p><strong>Ngày sinh:</strong> 12/07/2008</p>
-    <p><strong>Sở thích:</strong> móc len, đọc sách</p>
-    <p><strong>Châm ngôn sống:</strong> “Chuyện cũ mình bỏ qua.”</p>
-  </div>
-  <a class="back" onclick="backHome()">◀ Quay lại</a>
-</div>
 
 <script>
 function openMember(id){
