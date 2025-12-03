@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <title>Giới thiệu nhóm 6 – Pastel Edition</title>
+
 <style>
 body{
   font-family:Arial, sans-serif;
@@ -10,82 +11,196 @@ body{
   background:#f7f1ff;
 }
 header{
-  width:100%;height:240px;
+  width:100%;
+  height:240px;
   background:url('https://i.pinimg.com/736x/42/a7/d1/42a7d119b6326f017cfd3e931b9436e2.jpg') center/cover no-repeat;
   border-bottom:6px solid #a78bfa;
 }
 .container{padding:20px;}
-.members{display:flex;gap:20px;overflow-x:auto;padding:10px;}
-.member{
-  background:#ffffffdd;padding:12px;border-radius:12px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.12);cursor:pointer;text-align:center;
-  min-width:160px;text-decoration:none;color:black;transition:0.2s;
+
+.members{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  padding:10px;
 }
-.member:hover{transform:scale(1.05);background:#fdf7ff;}
-.member img{width:120px;height:120px;border-radius:12px;object-fit:cover;}
+.member{
+  background:#ffffffdd;
+  padding:12px;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.12);
+  cursor:pointer;
+  text-align:center;
+  min-width:160px;
+  text-decoration:none;
+  color:black;
+  transition:0.2s;
+}
+.member:hover{
+  transform:scale(1.05);
+  background:#fdf7ff;
+}
+.member img{
+  width:120px;
+  height:120px;
+  border-radius:12px;
+  object-fit:cover;
+}
+
+/* TRANG RIÊNG */
 .detail-page{
-  display:none;max-width:700px;margin:30px auto;background:#ffffffd0;
-  padding:25px;border-radius:14px;box-shadow:0 4px 15px rgba(0,0,0,0.12);
+  display:none;
+  max-width:700px;
+  margin:30px auto;
+  background:#ffffffd0;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.12);
   text-align:center;
 }
-.avatar{width:200px;height:200px;border-radius:12px;object-fit:cover;
-  box-shadow:0 4px 12px rgba(0,0,0,0.2);margin-top:-120px;background:white;padding:5px;
+.avatar{
+  width:200px;
+  height:200px;
+  border-radius:12px;
+  object-fit:cover;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  margin-top:-120px;
+  background:white;
+  padding:5px;
 }
-.detail-page h2{margin-top:20px;color:#8b5cf6;}
-.info{text-align:left;margin-top:20px;font-size:17px;line-height:1.6;}
+.detail-page h2{
+  margin-top:20px;
+  color:#8b5cf6;
+}
+.info{
+  text-align:left;
+  margin-top:20px;
+  font-size:17px;
+  line-height:1.6;
+}
 a.back{
-  display:inline-block;margin-top:20px;background:#a78bfa;color:white;
-  text-decoration:none;padding:10px 16px;border-radius:8px;
+  display:inline-block;
+  margin-top:20px;
+  background:#a78bfa;
+  color:white;
+  text-decoration:none;
+  padding:10px 16px;
+  border-radius:8px;
 }
-.exercise-section{margin-top:30px;padding:20px;background:#ffffffdd;border-radius:12px;
+
+/* BÀI TẬP */
+.exercise-section{
+  margin-top:30px;
+  padding:20px;
+  background:#ffffffdd;
+  border-radius:12px;
   box-shadow:0 4px 12px rgba(0,0,0,0.15);
 }
-.exercise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:15px;margin-top:10px;}
-.card{background:#e9d5ff;padding:15px;border-radius:10px;text-align:center;
-  box-shadow:0 3px 8px rgba(0,0,0,0.1);transition:0.2s;
+.exercise-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+  gap:15px;
+  margin-top:10px;
 }
-.card:hover{background:#f3e8ff;transform:scale(1.04);} .card a{text-decoration:none;color:#4c1d95;font-weight:bold;font-size:16px;}
-footer{text-align:center;margin:40px 0 20px;color:#6b7280;}
+.card{
+  background:#e9d5ff;
+  padding:15px;
+  border-radius:10px;
+  text-align:center;
+  box-shadow:0 3px 8px rgba(0,0,0,0.1);
+  transition:0.2s;
+}
+.card:hover{
+  background:#f3e8ff;
+  transform:scale(1.04);
+}
+.card a{
+  text-decoration:none;
+  color:#4c1d95;
+  font-weight:bold;
+  font-size:16px;
+}
+
+footer{
+  text-align:center;
+  margin:40px 0 20px;
+  color:#6b7280;
+}
 </style>
 </head>
+
 <body>
 <header></header>
+
+<!-- TRANG CHÍNH -->
 <div class="container" id="mainPage">
   <h2 style="color:#7c3aed;">✨ Thành viên nhóm 6 ✨</h2>
+
   <div class="members">
-    <div class="member" onclick="openMember('thy')"><img src="https://i.pinimg.com/736x/b3/ed/08/b3ed08507e8ce698257c0c448177742e.jpg"><p><strong>Nguyễn Phương Thy</strong></p></div>
-    <div class="member" onclick="openMember('mhvy')"><img src="https://i.pinimg.com/736x/98/43/cc/9843cccb9f058d0d2143033a0b1bebcf.jpg"><p><strong>Mai Hoàng Vy</strong></p></div>
-    <div class="member" onclick="openMember('kvy')"><img src="https://i.pinimg.com/736x/2f/d2/1b/2fd21bd35fbe51140cb7d534b157ce2d.jpg"><p><strong>Đặng Khánh Vy</strong></p></div>
-    <div class="member" onclick="openMember('nhi')"><img src="https://i.pinimg.com/736x/a7/f3/e3/a7f3e3f764240e539120de87a2b6ba0d.jpg"><p><strong>Lê Bùi Thảo Nhi</strong></p></div>
-    <div class="member" onclick="openMember('cuong')"><img src="https://i.pinimg.com/1200x/a7/80/90/a7809097d1a3343c25df745941dd31f5.jpg"><p><strong>Đoàn Chí Cường</strong></p></div>
-    <div class="member" onclick="openMember('thaodang')"><img src="https://i.pinimg.com/736x/dc/8e/0e/dc8e0ea7a7e78877215668113f7c4917.jpg"><p><strong>Đặng Hương Thảo</strong></p></div>
+    <div class="member" onclick="openMember('thy')">
+      <img src="https://i.pinimg.com/736x/b3/ed/08/b3ed08507e8ce698257c0c448177742e.jpg">
+      <p><strong>Nguyễn Phương Thy</strong></p>
+    </div>
+
+    <div class="member" onclick="openMember('mhvy')">
+      <img src="https://i.pinimg.com/736x/98/43/cc/9843cccb9f058d0d2143033a0b1bebcf.jpg">
+      <p><strong>Mai Hoàng Vy</strong></p>
+    </div>
+
+    <div class="member" onclick="openMember('kvy')">
+      <img src="https://i.pinimg.com/736x/2f/d2/1b/2fd21bd35fbe51140cb7d534b157ce2d.jpg">
+      <p><strong>Đặng Khánh Vy</strong></p>
+    </div>
+
+    <div class="member" onclick="openMember('nhi')">
+      <img src="https://i.pinimg.com/736x/a7/f3/e3/a7f3e3f764240e539120de87a2b6ba0d.jpg">
+      <p><strong>Lê Bùi Thảo Nhi</strong></p>
+    </div>
+
+    <div class="member" onclick="openMember('cuong')">
+      <img src="https://i.pinimg.com/1200x/a7/80/90/a7809097d1a3343c25df745941dd31f5.jpg">
+      <p><strong>Đoàn Chí Cường</strong></p>
+    </div>
+
+    <div class="member" onclick="openMember('thaodang')">
+      <img src="https://i.pinimg.com/736x/dc/8e/0e/dc8e0ea7a7e78877215668113f7c4917.jpg">
+      <p><strong>Đặng Hương Thảo</strong></p>
+    </div>
   </div>
 
+  <!-- BÀI TẬP -->
   <div class="exercise-section">
     <h3 style="color:#7c3aed;">📚 Bài tập từ Bài 8 đến Bài 18</h3>
     <div class="exercise-grid">
+
       <div class="card"><a href="https://hihi195208-sketch.github.io/b-i-2/">Bài 2</a></div>
       <div class="card"><a href="https://www.canva.com/design/DAG58ds4CGM/cRnxIiAsTaGbQg18ICp8Ng/edit?utm_content=DAG58ds4CGM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Bài 6</a></div>
       <div class="card"><a href="https://www.canva.com/design/DAG58eHJSp8/UaSUV6LKpr-JB34hZh_s-g/edit?utm_content=DAG58eHJSp8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Bài 9</a></div>
       <div class="card"><a href="https://www.canva.com/design/DAG58ZuzDmg/CchF7ehGxhJ6cOpIKa1NSA/edit?continue_in_browser=true&ui=e30" target="_blank">Bài 10</a></div>
-      <div class="card"><a href="" target="_blank">Bài 11</a></div>
-      <div class="card"><a href="" target="_blank">Bài 12</a></div>
-      <div class="card"><a href="" target="_blank">Bài 13</a></div>
-      <div class="card"><a href="" target="_blank">Bài 14</a></div>
-      <div class="card"><a href="" target="_blank">Bài 15</a></div>
-      <div class="card"><a href="" target="_blank">Bài 16</a></div>
-      <div class="card"><a href="" target="_blank">Bài 17</a></div>
-      <div class="card"><a href="" target="_blank">Bài 18</a></div>
+
+      <div class="card"><a href="">Bài 11</a></div>
+      <div class="card"><a href="">Bài 12</a></div>
+      <div class="card"><a href="">Bài 13</a></div>
+      <div class="card"><a href="">Bài 14</a></div>
+      <div class="card"><a href="">Bài 15</a></div>
+      <div class="card"><a href="">Bài 16</a></div>
+      <div class="card"><a href="">Bài 17</a></div>
+      <div class="card"><a href="">Bài 18</a></div>
+
     </div>
   </div>
+
 </div>
 
-<!-- PAGES FOR MEMBERS -->
+<!-- CÁC TRANG RIÊNG -->
 <div class="detail-page" id="thyPage">
   <img class="avatar" src="https://i.pinimg.com/736x/b3/ed/08/b3ed08507e8ce698257c0c448177742e.jpg">
   <h2>Nguyễn Phương Thy</h2>
   <div class="info">
-    <p class="motto"><strong>Châm ngôn sống:</strong> Hãy sống như thể ngày mai bạn không còn tồn tại</p><p><strong>Ngày sinh:</strong> 19/05/2008</p><p><strong>Sở thích:</strong> Nghe nhạc, đọc sách, chụp ảnh</p></div>
+    <p><strong>Châm ngôn sống:</strong> Hãy sống như thể ngày mai bạn không còn tồn tại</p>
+    <p><strong>Ngày sinh:</strong> 19/05/2008</p>
+    <p><strong>Sở thích:</strong> Nghe nhạc, đọc sách, chụp ảnh</p>
+  </div>
   <a class="back" onclick="goBack()">⬅ Quay lại</a>
 </div>
 
@@ -93,7 +208,10 @@ footer{text-align:center;margin:40px 0 20px;color:#6b7280;}
   <img class="avatar" src="https://i.pinimg.com/736x/98/43/cc/9843cccb9f058d0d2143033a0b1bebcf.jpg">
   <h2>Mai Hoàng Vy</h2>
   <div class="info">
-    <p class="motto"><strong>Châm ngôn sống:</strong> Sống nay, stress mai</p><p><strong>Ngày sinh:</strong> 20/05/2008</p><p><strong>Sở thích:</strong> Du lịch, chơi với Phương Thy</p></div>
+    <p><strong>Châm ngôn sống:</strong> Sống nay, stress mai</p>
+    <p><strong>Ngày sinh:</strong> 20/05/2008</p>
+    <p><strong>Sở thích:</strong> Du lịch, chơi với Phương Thy</p>
+  </div>
   <a class="back" onclick="goBack()">⬅ Quay lại</a>
 </div>
 
@@ -101,15 +219,21 @@ footer{text-align:center;margin:40px 0 20px;color:#6b7280;}
   <img class="avatar" src="https://i.pinimg.com/736x/2f/d2/1b/2fd21bd35fbe51140cb7d534b157ce2d.jpg">
   <h2>Đặng Khánh Vy</h2>
   <div class="info">
-    <p class="motto"><strong>Châm ngôn sống:</strong> Còn thở là còn gỡ </p><p><strong>Ngày sinh:</strong> 19/09/2008</p><p><strong>Sở thích:</strong> Ngủ, coi phim, nghe nhạc</p></div>
+    <p><strong>Châm ngôn sống:</strong> Còn thở là còn gỡ</p>
+    <p><strong>Ngày sinh:</strong> 19/09/2008</p>
+    <p><strong>Sở thích:</strong> Ngủ, coi phim, nghe nhạc</p>
+  </div>
   <a class="back" onclick="goBack()">⬅ Quay lại</a>
 </div>
 
 <div class="detail-page" id="nhiPage">
   <img class="avatar" src="https://i.pinimg.com/736x/a7/f3/e3/a7f3e3f764240e539120de87a2b6ba0d.jpg">
   <h2>Lê Bùi Thảo Nhi</h2>
-    <div class="info">
-    <p class="motto"><strong>Châm ngôn sống:</strong> Đừng lo lắng về ngày mai vì hôm nay lo chưa xong</p><p><strong>Ngày sinh:</strong> 04/10/2008</p><p><strong>Sở thích:</strong> Du lịch, đọc sách</p></div>
+  <div class="info">
+    <p><strong>Châm ngôn sống:</strong> Đừng lo lắng về ngày mai vì hôm nay lo chưa xong</p>
+    <p><strong>Ngày sinh:</strong> 04/10/2008</p>
+    <p><strong>Sở thích:</strong> Du lịch, đọc sách</p>
+  </div>
   <a class="back" onclick="goBack()">⬅ Quay lại</a>
 </div>
 
@@ -117,17 +241,49 @@ footer{text-align:center;margin:40px 0 20px;color:#6b7280;}
   <img class="avatar" src="https://i.pinimg.com/1200x/a7/80/90/a7809097d1a3343c25df745941dd31f5.jpg">
   <h2>Đoàn Chí Cường</h2>
   <div class="info">
-    <p class="motto"><strong>Châm ngôn sống:</strong> What is better than translater? trans-now </p><p><strong>Ngày sinh:</strong> 27/08/2008</p><p><strong>Sở thích:</strong> Dad jokes, ăn–ngủ–chơi</p></div>
+    <p><strong>Châm ngôn sống:</strong> What is better than translater? trans-now</p>
+    <p><strong>Ngày sinh:</strong> 27/08/2008</p>
+    <p><strong>Sở thích:</strong> Dad jokes, ăn–ngủ–chơi</p>
+  </div>
   <a class="back" onclick="goBack()">⬅ Quay lại</a>
 </div>
 
 <div class="detail-page" id="thaodangPage">
   <img class="avatar" src="https://i.pinimg.com/736x/dc/8e/0e/dc8e0ea7a7e78877215668113f7c4917.jpg">
   <h2>Đặng Hương Thảo</h2>
-    <div class="info">
-    <p class="motto"><strong>Châm ngôn sống:</strong> Chuyện cũ mình bỏ qua </p><p><strong>Ngày sinh:</strong> 12/07/2008</p><p><strong>Sở thích:</strong> móc len, đọc sách</p></div>
+  <div class="info">
+    <p><strong>Châm ngôn sống:</strong> Chuyện cũ mình bỏ qua</p>
+    <p><strong>Ngày sinh:</strong> 12/07/2008</p>
+    <p><strong>Sở thích:</strong> Móc len, đọc sách</p>
+  </div>
   <a class="back" onclick="goBack()">⬅ Quay lại</a>
 </div>
+
 <footer>© Nhóm 6 – 2025</footer>
+
+<!-- SCRIPT QUAN TRỌNG -->
+<script>
+function openMember(name){
+  document.getElementById("mainPage").style.display = "none";
+
+  const pages = document.querySelectorAll(".detail-page");
+  pages.forEach(p => p.style.display = "none");
+
+  const page = document.getElementById(name + "Page");
+  if(page){
+    page.style.display = "block";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+function goBack(){
+  const pages = document.querySelectorAll(".detail-page");
+  pages.forEach(p => p.style.display = "none");
+
+  document.getElementById("mainPage").style.display = "block";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+
 </body>
 </html>
