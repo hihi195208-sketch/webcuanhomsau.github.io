@@ -199,42 +199,66 @@
     }
 
     /* Bài tập - Horizontal Layout */
-    .exercise-section {
-      margin-top: 30px;
-      padding: 20px;
-      background: #ffffffdd;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
+/* Bài tập - Card đẹp + mô tả */
+.exercise-section {
+  margin-top: 30px;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
 
-    .exercise-grid {
-      display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      margin-top: 10px;
-    }
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 15px;
+}
 
-    .card {
-      background: #e9d5ff;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      width: 200px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-      transition: 0.2s;
-    }
+.card {
+  background: #f3e8ff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.10);
+  transition: 0.25s;
+  text-align: left;
+}
 
-    .card:hover {
-      background: #f3e8ff;
-      transform: scale(1.04);
-    }
+.card:hover {
+  transform: translateY(-5px);
+  background: #ede1ff;
+}
 
-    .card a {
-      text-decoration: none;
-      color: #4c1d95;
-      font-weight: bold;
-      font-size: 16px;
-    }
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #6d28d9;
+  margin-bottom: 10px;
+}
+
+.card-desc {
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 12px;
+}
+
+.card a {
+  display: inline-block;
+  padding: 8px 12px;
+  background: #c4b5fd;
+  color: #4c1d95;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.card a:hover {
+  background: #a78bfa;
+  color: white;
+}
+
   </style>
 </head>
 
@@ -303,24 +327,76 @@
   </div>
 
   <!-- Bài tập -->
-  <div class="exercise-section">
-    <h3 style="color:#7c3aed;">📚 Bài tập từ Bài 8 đến Bài 18</h3>
-    <div class="exercise-grid">
-      <div class="card"><a href="https://hihi195208-sketch.github.io/B-i-8/">Bài 8</a></div>
-      <div class="card"><a href="https://hihi195208-sketch.github.io/bai9/">Bài 9</a></div>
-      <div class="card"><a href="https://hihi195208-sketch.github.io/B-i-10/">Bài 10</a></div>
-      <div class="card"><a href="https://github.com/hihi195208-sketch/bai11">Bài 11</a></div>
-      <div class="card"><a href="https://github.com/hihi195208-sketch/bai-12">Bài 12</a></div>
-      <div class="card"><a href="https://github.com/hihi195208-sketch/bai-13">Bài 13</a></div>
-      <div class="card"><a href="https://hihi195208-sketch.github.io/bai14/">Bài 14</a></div>
-      <div class="card"><a href="">Bài 15</a></div>
-      <div class="card"><a href="">Bài 16</a></div>
-      <div class="card"><a href="">Bài 17</a></div>
-      <div class="card"><a href="">Bài 18</a></div>
-    </div>
+ <div class="exercise-grid">
+  
+  <div class="card">
+    <div class="card-title">Bài 8</div>
+    <div class="card-desc">Tìm hiểu về danh sách (list), các thao tác thêm, xoá, sửa và duyệt danh sách.</div>
+    <a href="https://hihi195208-sketch.github.io/B-i-8/">Xem bài</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Bài 9</div>
+    <div class="card-desc">Vòng lặp for và while, cách dùng để xử lý lặp lại thao tác trong chương trình.</div>
+    <a href="https://hihi195208-sketch.github.io/bai9/">Xem bài</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Bài 10</div>
+    <div class="card-desc">Định nghĩa hàm, tham số, giá trị trả về và ứng dụng hàm vào chương trình.</div>
+    <a href="https://hihi195208-sketch.github.io/B-i-10/">Xem bài</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Bài 11</div>
+    <div class="card-desc">Chuỗi kí tự (string), cách truy cập, cắt chuỗi, nối chuỗi và các hàm xử lý chuỗi.</div>
+    <a href="https://github.com/hihi195208-sketch/bai11">Xem bài</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Bài 12</div>
+    <div class="card-desc">Câu lệnh rẽ nhánh if – else, cách kiểm tra điều kiện và xử lý nhiều trường hợp.</div>
+    <a href="https://github.com/hihi195208-sketch/bai-12">Xem bài</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Bài 13</div>
+    <div class="card-desc">Ôn tập nâng cao về biến, vòng lặp, hàm và xử lý dữ liệu trong lập trình.</div>
+    <a href="https://github.com/hihi195208-sketch/bai-13">Xem bài</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Bài 14</div>
+    <div class="card-desc">Bài tập tổng hợp yêu cầu vận dụng nhiều kiến thức đã học trước đó.</div>
+    <a href="#">Đang cập nhật</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Bài 15</div>
+    <div class="card-desc">Tìm hiểu về kiểu dữ liệu từ điển (dictionary), cách lưu trữ và truy cập dữ liệu theo cặp.</div>
+    <a href="#">Đang cập nhật</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Bài 16</div>
+    <div class="card-desc">Xử lý tập tin: cách đọc, ghi và quản lý dữ liệu trong file văn bản.</div>
+    <a href="#">Đang cập nhật</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Bài 17</div>
+    <div class="card-desc">Thuật toán cơ bản: tìm kiếm, sắp xếp và ứng dụng vào bài toán thực tế.</div>
+    <a href="#">Đang cập nhật</a>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Bài 18</div>
+    <div class="card-desc">Tổng kết cuối chương: hệ thống lại kiến thức và hoàn thành bài tập nâng cao.</div>
+    <a href="#">Đang cập nhật</a>
   </div>
 
 </div>
+
 
 <footer>© Nhóm 6 – 2025</footer>
 
