@@ -87,13 +87,15 @@
     }
 
     .calendar .date {
-      font-size: 24px;
-      font-weight: bold;
-      border: 2px solid white;
-      padding: 5px;
-      border-radius: 50%;
-      margin-top: 5px;
-      display: inline-block;
+     .calendar .date {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.3);
+}
+
     }
 
     /* Container cho phần giới thiệu nhóm */
@@ -129,37 +131,41 @@
     }
 
     /* Thành viên */
-    .members {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      padding: 10px;
-    }
+  .section-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
 
-    .member {
-      background: #ffffffdd;
-      padding: 12px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
-      cursor: pointer;
-      text-align: center;
-      min-width: 160px;
-      text-decoration: none;
-      color: black;
-      transition: 0.2s;
-    }
+.members {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 15px;
+}
 
-    .member:hover {
-      transform: scale(1.05);
-      background: #fdf7ff;
-    }
+.member {
+  background: #ffffffdd;
+  padding: 14px;
+  border-radius: 14px;
+  min-width: 170px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: 0.25s;
+}
 
-    .member img {
-      width: 120px;
-      height: 120px;
-      border-radius: 12px;
-      object-fit: cover;
-    }
+.member:hover {
+  transform: translateY(-5px);
+}
+
+.member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
 
     /* Bài tập - Horizontal Layout */
 /* Bài tập - Card đẹp + mô tả */
@@ -221,6 +227,18 @@
   background: #a78bfa;
   color: white;
 }
+    footer {
+  background: #d8b4fe;
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+
 
   </style>
 </head>
@@ -262,8 +280,10 @@
 </div>
 
 
- <div class="members">
-  <h2 class="section-title">✨ Giới thiệu thành viên nhóm ✨</h2>
+<!-- GIỚI THIỆU THÀNH VIÊN -->
+<h2 class="section-title" style="color:#7c3aed; margin-top:40px; text-align:center;">
+  ✨ Giới thiệu thành viên nhóm ✨
+</h2>
 
 <div class="members">
   <div class="member" data-link="link_trang_Thy" onclick="openMemberPage(this)">
@@ -303,8 +323,9 @@
 
   <!-- Bài tập -->
  <div class="exercise-grid">
- <h2 class="section-title">📘 Bài tập của nhóm 📘</h2>
-
+<h2 class="section-title" style="color:#7c3aed; margin-top:40px; text-align:center;">
+  📘 Bài tập của nhóm 📘
+</h2>
 <div class="exercise-grid">
   <!-- Các card bài tập -->
   <div class="card">
