@@ -161,43 +161,6 @@
       object-fit: cover;
     }
 
-    /* Phân công nhiệm vụ */
-    .task-section {
-      margin-top: 40px;
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-      text-align: center;
-    }
-
-    .task-section h3 {
-      color: #7c3aed;
-      margin-bottom: 20px;
-    }
-
-    .task-list {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .task {
-      background: #e9d5ff;
-      padding: 15px;
-      border-radius: 10px;
-      width: 200px;
-      text-align: center;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-      transition: 0.2s;
-    }
-
-    .task:hover {
-      background: #f3e8ff;
-      transform: scale(1.04);
-    }
-
     /* Bài tập - Horizontal Layout */
 /* Bài tập - Card đẹp + mô tả */
 .exercise-section {
@@ -286,7 +249,7 @@
 
 <!-- TRANG CHÍNH -->
 <div class="container" id="mainPage">
-  <h2 style="color:#7c3aed;">✨ Thành viên nhóm 6 ✨</h2>
+  <h2 style="color:#7c3aed;">✨ Giới thiệu chung về nhóm 6 ✨</h2>
 
 <!-- Giới thiệu nhóm -->
 <div class="introduction">
@@ -300,7 +263,9 @@
 
 
  <div class="members">
-   <h2 class="section-title">Giới thiệu thành viên nhóm</h2>
+  <h2 class="section-title">✨ Giới thiệu thành viên nhóm ✨</h2>
+
+<div class="members">
   <div class="member" data-link="link_trang_Thy" onclick="openMemberPage(this)">
     <img src="https://i.pinimg.com/736x/b3/ed/08/b3ed08507e8ce698257c0c448177742e.jpg">
     <p><strong>Nguyễn Phương Thy</strong></p>
@@ -312,7 +277,7 @@
   </div>
 
   <div class="member" data-link="https://hihi195208-sketch.github.io/Khanh-Vy/" onclick="openMemberPage(this)">
-    <img src="https://i.pinimg.com/736x/2f/d2/1b/2fd21bd35fbe51140cb7d534b157ce2d.jpg ">
+    <img src="https://i.pinimg.com/736x/2f/d2/1b/2fd21bd35fbe51140cb7d534b157ce2d.jpg">
     <p><strong>Đặng Khánh Vy</strong></p>
   </div>
 
@@ -332,12 +297,16 @@
   </div>
 </div>
 
+</div>
+
   </div>
 
   <!-- Bài tập -->
  <div class="exercise-grid">
-  <h2 class="section-title">Bài tập của nhóm</h2>
-   
+ <h2 class="section-title">📘 Bài tập của nhóm 📘</h2>
+
+<div class="exercise-grid">
+  <!-- Các card bài tập -->
   <div class="card">
     <div class="card-title">Bài 8. Định dạng văn bản </div>
     <div class="card-desc">Sử sụng được thẻ HTML để định dạng văn bản, phông chữ</div>
@@ -426,18 +395,37 @@ footer {
 
 
 <script>
-  // Đồng hồ
-  setInterval(function() {
-    const date = new Date();
-    document.getElementById("clock").innerHTML = date.toLocaleTimeString();
-  }, 1000);
+  // Đồng hồ đếm giờ - ngày - tháng - năm
+  function updateClock() {
+    const now = new Date();
+    
+    const hours = now.getHours().toString().padStart(2, "0");
+    const minutes = now.getMinutes().toString().padStart(2, "0");
+    const seconds = now.getSeconds().toString().padStart(2, "0");
 
-  // Hiển thị lịch
-  const date = new Date();
-  document.getElementById("dayOfWeek").innerHTML = date.toLocaleString('vi-VN', { weekday: 'long' });
-  document.getElementById("month").innerHTML = date.toLocaleString('vi-VN', { month: 'long' });
-  document.getElementById("year").innerHTML = date.getFullYear();
-  document.getElementById("date").innerHTML = date.getDate();
+    const date = now.getDate();
+    const month = now.getMonth() + 1; 
+    const year = now.getFullYear();
+
+    document.getElementById("clock").innerHTML =
+      `${hours}:${minutes}:${seconds} — ${date}/${month}/${year}`;
+  }
+
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // Click vào thành viên → mở link
+  function openMemberPage(element) {
+    const link = element.getAttribute("data-link");
+
+    if (link && link.trim() !== "") {
+      window.location.href = link;
+    } else {
+      alert("Trang thành viên này đang được cập nhật!");
+    }
+  }
+</script>
+
 
  <script>
 function openMemberPage(element) {
