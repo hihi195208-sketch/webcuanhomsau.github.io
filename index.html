@@ -300,6 +300,7 @@
 
 
  <div class="members">
+   <h2 class="section-title">Giới thiệu thành viên nhóm</h2>
   <div class="member" data-link="link_trang_Thy" onclick="openMemberPage(this)">
     <img src="https://i.pinimg.com/736x/b3/ed/08/b3ed08507e8ce698257c0c448177742e.jpg">
     <p><strong>Nguyễn Phương Thy</strong></p>
@@ -335,7 +336,8 @@
 
   <!-- Bài tập -->
  <div class="exercise-grid">
-  
+  <h2 class="section-title">Bài tập của nhóm</h2>
+   
   <div class="card">
     <div class="card-title">Bài 8. Định dạng văn bản </div>
     <div class="card-desc">Sử sụng được thẻ HTML để định dạng văn bản, phông chữ</div>
@@ -391,7 +393,7 @@
   </div>
 
   <div class="card">
-    <div class="card-title">Bài 1.Các mức ưu tiên của bộ chọn7</div>
+    <div class="card-title">Bài 17.Các mức ưu tiên của bộ chọn</div>
     <div class="card-desc">.</div>
     <a href="#">Đang cập nhật</a>
   </div>
@@ -437,15 +439,17 @@ footer {
   document.getElementById("year").innerHTML = date.getFullYear();
   document.getElementById("date").innerHTML = date.getDate();
 
-  // Mở trang chi tiết thành viên
-  function openMember(name) {
-    document.getElementById("mainPage").style.display = "none";
-    const pages = document.querySelectorAll(".detail-page");
-    pages.forEach(p => p.style.display = "none");
-    const page = document.getElementById(name + "Page");
-    if (page) {
-      page.style.display = "block";
-      window.scrollTo({ top: 0, behavior: "smooth" });
+ <script>
+function openMemberPage(element) {
+  const link = element.getAttribute("data-link");
+  if (link && link.trim() !== "") {
+    window.location.href = link;
+  } else {
+    alert("Trang thành viên đang được cập nhật!");
+  }
+}
+</script>
+
     }
   }
 
