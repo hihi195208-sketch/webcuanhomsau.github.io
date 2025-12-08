@@ -103,31 +103,31 @@
     }
 
     /* Giới thiệu nhóm */
-    .introduction {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 30px 0;
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      gap: 30px;
-    }
-
-   .introduction img {
-  max-width: 25%;  /* Giảm kích thước ảnh xuống 25% */
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  .introduction {
+  width: 70%;                  /* gọn lại toàn bộ khối */
+  margin: 25px auto;           /* căn giữa màn hình */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;                   /* khoảng cách giữa ảnh và text */
 }
 
+.introduction img {
+  width: 180px;                /* giảm kích thước ảnh */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
 
-    .introduction-text {
-      flex: 1;
-      font-size: 18px;
-      line-height: 1.6;
-      color: #6b7280;
-    }
+.introduction-text {
+  font-size: 16px;             /* nhỏ hơn */
+  line-height: 1.5;
+  color: #6b7280;
+  max-width: 380px;            /* gom gọn nội dung */
+}
 
     /* Thành viên */
   .section-title {
@@ -267,7 +267,10 @@
 
 <!-- TRANG CHÍNH -->
 <div class="container" id="mainPage">
-  <h2 style="color:#7c3aed;">✨ Giới thiệu chung về nhóm 6 ✨</h2>
+  <h2 style="color:#7c3aed; text-align:center; margin-top:30px;">
+  ✨ Giới thiệu chung về nhóm 6 ✨
+</h2>
+
 
 <!-- Giới thiệu nhóm -->
 <div class="introduction">
@@ -286,12 +289,12 @@
 </h2>
 
 <div class="members">
-  <div class="member" data-link="link_trang_Thy" onclick="openMemberPage(this)">
+  <div class="member" data-link="https://hihi195208-sketch.github.io/phuong-thy/" onclick="openMemberPage(this)">
     <img src="https://i.pinimg.com/736x/b3/ed/08/b3ed08507e8ce698257c0c448177742e.jpg">
     <p><strong>Nguyễn Phương Thy</strong></p>
   </div>
 
-  <div class="member" data-link="link_trang_Vy_hoang" onclick="openMemberPage(this)">
+  <div class="member" data-link="https://hihi195208-sketch.github.io/hoang-vy/" onclick="openMemberPage(this)">
     <img src="https://i.pinimg.com/736x/98/43/cc/9843cccb9f058d0d2143033a0b1bebcf.jpg">
     <p><strong>Mai Hoàng Vy</strong></p>
   </div>
